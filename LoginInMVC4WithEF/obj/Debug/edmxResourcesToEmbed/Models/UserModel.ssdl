@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UserModelStoreContainer">
+    <EntitySet Name="Registration" EntityType="UserModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="PasswordSalt" Type="varchar" MaxLength="150" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IPAddress" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsNewsletter" Type="bit" />
+    <Property Name="Company" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityAnswer" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityQuestion" Type="varchar" MaxLength="50" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="UserImage" Type="varchar" MaxLength="100" />
+    <Property Name="Validated" Type="bit" />
+    <Property Name="UserIdGuid" Type="varchar" MaxLength="100" />
+    <Property Name="HowDidYouKnow" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

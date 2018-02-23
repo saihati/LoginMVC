@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="UserModelStoreContainer">
+    <EntitySet Name="Registration" EntityType="UserModel.Store.Registration" store:Type="Tables" store:Schema="dbo" store:Name="Registration">
+      <DefiningQuery>SELECT 
+      [Registration].[UserId] AS [UserId], 
+      [Registration].[Email] AS [Email], 
+      [Registration].[Password] AS [Password], 
+      [Registration].[PasswordSalt] AS [PasswordSalt], 
+      [Registration].[FirstName] AS [FirstName], 
+      [Registration].[LastName] AS [LastName], 
+      [Registration].[UserType] AS [UserType], 
+      [Registration].[CreatedDate] AS [CreatedDate], 
+      [Registration].[IsActive] AS [IsActive], 
+      [Registration].[IPAddress] AS [IPAddress], 
+      [Registration].[IsNewsletter] AS [IsNewsletter], 
+      [Registration].[Company] AS [Company], 
+      [Registration].[Role] AS [Role], 
+      [Registration].[SecurityAnswer] AS [SecurityAnswer], 
+      [Registration].[SecurityQuestion] AS [SecurityQuestion], 
+      [Registration].[IndustryId] AS [IndustryId], 
+      [Registration].[UserImage] AS [UserImage], 
+      [Registration].[Validated] AS [Validated], 
+      [Registration].[UserIdGuid] AS [UserIdGuid], 
+      [Registration].[HowDidYouKnow] AS [HowDidYouKnow]
+      FROM [dbo].[Registration] AS [Registration]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'D:\SAMPLE APPLICATIONS\LOGININMVC4WITHEF\LOGININMVC4WITHEF\APP_DATA\USER.MDF.dbo.Registration' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="UserType" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="IPAddress" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PasswordSalt" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IPAddress" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsNewsletter" Type="bit" />
+    <Property Name="Company" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityAnswer" Type="varchar" MaxLength="50" />
+    <Property Name="SecurityQuestion" Type="varchar" MaxLength="50" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="UserImage" Type="varchar" MaxLength="100" />
+    <Property Name="Validated" Type="bit" />
+    <Property Name="UserIdGuid" Type="varchar" MaxLength="100" />
+    <Property Name="HowDidYouKnow" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

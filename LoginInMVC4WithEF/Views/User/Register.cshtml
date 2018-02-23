@@ -1,0 +1,310 @@
+﻿@model LoginInMVC4WithEF.Models.Registration
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Registeration Failed, fields.");
+    <div>
+        <fieldset>
+            <legend>Register Form</legend>
+
+		
+            <div class="editor-label">@Html.LabelFor(u => u.FirstName)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.FirstName)
+                @Html.ValidationMessageFor(u => u.FirstName)
+            </div>
+
+
+		             <div class="editor-label">@Html.LabelFor(u => u.LastName)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.LastName)
+                @Html.ValidationMessageFor(u => u.LastName)
+            </div>
+
+
+             <div class="editor-label">@Html.LabelFor(u => u.Company)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.Company)
+                @Html.ValidationMessageFor(u => u.Company)
+            </div>
+
+		                         <div class="editor-label">@Html.LabelFor(u => u.IsActive)</div>
+            <div class="editor-field">@Html.CheckBoxFor(u => u.IsActive)
+                @Html.ValidationMessageFor(u => u.IsActive)
+            </div>
+
+
+             <div class="editor-label">@Html.LabelFor(u => u.IndustryId)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.IndustryId)
+                @Html.ValidationMessageFor(u => u.IndustryId)
+            </div>
+
+
+
+
+
+		<div class="editor-label">@Html.LabelFor(u => u.Email)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.Email)
+                @Html.ValidationMessageFor(u => u.Email)
+            </div>
+        
+            <div class="editor-label">@Html.LabelFor(u => u.Password)</div>
+            <div class="editor-field">@Html.PasswordFor(u => u.Password)
+                @Html.ValidationMessageFor(u => u.Password)
+            </div>
+
+
+
+                        <div class="editor-label">@Html.LabelFor(u => u.PasswordSalt)</div>
+            <div class="editor-field">@Html.PasswordFor(u => u.PasswordSalt)
+                @Html.ValidationMessageFor(u => u.PasswordSalt)
+            </div>
+
+		             <div class="editor-label">@Html.LabelFor(u => u.UserIdGuid)</div>
+            <div class="editor-field">@Html.TextBoxFor(u => u.UserIdGuid)
+                @Html.ValidationMessageFor(u => u.UserIdGuid)
+            </div>
+
+
+		                   <div class="editor-label">@Html.LabelFor(u => u.HowDidYouKnow)</div>
+            <div class="editor-field">@Html.HiddenFor(u => u.HowDidYouKnow)
+                @Html.ValidationMessageFor(u => u.HowDidYouKnow)
+			
+			           <select>
+  <option value="xxl">N/A</option>
+  <option value="xxl">xxl</option>
+  <option value="Larg">Larg</option>
+  <option value="medium">medium</option>
+  <option value="small">small</option>
+</select>
+            </div>
+
+
+
+		<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+     <button type="submit" class="btn btn-primary">Submit</button>
+
+		
+        </fieldset>
+    </div>
+}
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+
+<legend>Additional Runners</legend>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+
+<form class="form-inline" role="form">
+   <div class="form-group">
+      <label for="name">first name</label>
+      <input type="name" class="form-control" id="name" placeholder="first name">
+   </div>
+   <div class="form-group">
+      <label for="name">last name</label>
+      <input type="name" class="form-control" id="name" placeholder="last name">
+ </div>
+   <div class="form-group">
+      <label for="pwd">shirt size</label>
+   </div>
+
+
+   <select id="Job" name="Job">
+<option value="">Choose a Size</option>
+<option value="111">XXL</option>
+<option value="333">Larg</option>
+<option value="222">Medium</option>
+<option value="444">Small</option>
+</select>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+ 
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+</form>
+
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+
+<form class="form-inline" role="form">
+   <div class="form-group">
+      <label for="name">first name</label>
+      <input type="name" class="form-control" id="name" placeholder="first name">
+   </div>
+   <div class="form-group">
+      <label for="name">last name</label>
+      <input type="name" class="form-control" id="name" placeholder="last name">
+ </div>
+   <div class="form-group">
+      <label for="pwd">shirt size</label>
+   </div>
+
+
+   <select id="Job" name="Job">
+<option value="">Choose a Size</option>
+<option value="111">XXL</option>
+<option value="333">Larg</option>
+<option value="222">Medium</option>
+<option value="444">Small</option>
+</select>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+ 
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+</form>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+
+<form class="form-inline" role="form">
+   <div class="form-group">
+      <label for="name">first name</label>
+      <input type="name" class="form-control" id="name" placeholder="first name">
+   </div>
+   <div class="form-group">
+      <label for="name">last name</label>
+      <input type="name" class="form-control" id="name" placeholder="last name">
+ </div>
+   <div class="form-group">
+      <label for="pwd">shirt size</label>
+   </div>
+
+
+   <select id="Job" name="Job">
+<option value="">Choose a Size</option>
+<option value="111">XXL</option>
+<option value="333">Larg</option>
+<option value="222">Medium</option>
+<option value="444">Small</option>
+</select>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+ 
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+</form>
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+
+
+
+<form class="form-inline" role="form">
+   <div class="form-group">
+      <label for="name">first name</label>
+      <input type="name" class="form-control" id="name" placeholder="first name">
+   </div>
+   <div class="form-group">
+      <label for="name">last name</label>
+      <input type="name" class="form-control" id="name" placeholder="last name">
+ </div>
+   <div class="form-group">
+      <label for="pwd">shirt size</label>
+   </div>
+
+
+   <select id="Job" name="Job">
+<option value="">Choose a Size</option>
+<option value="111">XXL</option>
+<option value="333">Larg</option>
+<option value="222">Medium</option>
+<option value="444">Small</option>
+</select>
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+ 
+
+
+
+<div class="row row-grid">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+</div>
+
+</form>
+
+

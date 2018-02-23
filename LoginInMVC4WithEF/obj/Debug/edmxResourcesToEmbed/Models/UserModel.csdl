@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UserEntities2" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Registrations" EntityType="UserModel.Registration" />
+  </EntityContainer>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsNewsletter" Type="Boolean" />
+    <Property Name="Company" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Role" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SecurityAnswer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SecurityQuestion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IndustryId" Type="Int32" />
+    <Property Name="UserImage" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Validated" Type="Boolean" />
+    <Property Name="UserIdGuid" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="HowDidYouKnow" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>
